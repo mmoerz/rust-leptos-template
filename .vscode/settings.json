@@ -1,0 +1,25 @@
+{
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.cargo.allFeatures": true,
+  "editor.formatOnSave": true,
+  "files.watcherExclude": {
+    "**/target/**": true
+  },
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:HOME}/.cargo/bin:${env:PATH}"
+  },
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.hover.actions.enable": true,
+  "rust-analyzer.hover.documentation": true,
+  "rust-analyzer.hover.expression": true,
+  "rust-analyzer.procMacro.ignored": {
+    "leptos_macro": [
+      "server"
+    ]
+  },
+  "rust-analyzer.rustfmt.overrideCommand": [
+    "leptosfmt",
+    "--stdin",
+    "--rustfmt"
+  ]
+}

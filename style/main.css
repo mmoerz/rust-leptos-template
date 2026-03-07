@@ -1,0 +1,121 @@
+/** Button Styles */
+.btn {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-sm {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+}
+
+.btn-md {
+    padding: 8px 16px;
+    font-size: 1rem;
+}
+
+.btn-lg {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: white;
+}
+
+.btn-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer Styles */
+.app-footer {
+    background-color: #f3f4f6;
+    color: #374151;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.app-footer .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.app-footer a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.app-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar Styles */
+.app-navbar {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.app-navbar .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-navbar .logo a {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: white;
+    text-decoration: none;
+}
+
+.app-navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.app-navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.app-navbar .nav-links li a:hover {
+    text-decoration: underline;
+}

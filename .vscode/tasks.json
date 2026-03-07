@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cargo build",
+      "type": "shell",
+      "command": "cargo build",
+      "group": "build"
+    },
+    {
+      "label": "cargo leptos watch",
+      "type": "shell",
+      "command": "trunk serve --port 3000 --open",
+      "group": "build"
+    }
+  ]
+}
