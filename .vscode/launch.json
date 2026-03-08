@@ -5,11 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Leptos",
+            "name": "Debug Leptos SSR",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceRoot}/target/debug/leptos-tutorial",
-            "args": [],
+            "program": "${workspaceRoot}/target/debug/server",
+            "args": [
+                "--features",
+                "ssr"
+            ],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "cargo build",
+            "console": "integratedTerminal",
+            "env": {
+                "RUST_LOG": "debug"
+            }
+        },
+        {
+            "name": "cargo",
+            "type": "lldb",
+            "request": "launch",
+            "program": "cargo",
+            "args": [
+                "watch",
+                "-x",
+                "run"
+            ],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "cargo build"
         }

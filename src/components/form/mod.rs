@@ -1,7 +1,7 @@
 //! Form-related components
 
-pub mod input;
+pub mod forminput;
 pub mod select;
 
-pub use input::Input;
-pub use select::Select;
+pub use forminput::FormInput;
+pub use select::FormSelect;

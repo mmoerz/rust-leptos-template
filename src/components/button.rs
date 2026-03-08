@@ -1,4 +1,6 @@
+use leptos::ev::MouseEvent;
 use leptos::*;
+use leptos::prelude::*;
 
 /// Button style variants
 #[derive(Clone, Copy, PartialEq)]
@@ -56,8 +58,8 @@ pub fn Button(
     #[prop(optional)]
     class: Option<&'static str>,
 
-    #[prop(optional)]
-    on_click: Option<Callback<web_sys::MouseEvent>>,
+    //#[prop(optional)]
+    on_click: impl FnMut(MouseEvent) + 'static,
 ) -> impl IntoView {
     let variant_class = match variant.unwrap_or(ButtonVariant::Primary) {
         ButtonVariant::Primary => "btn-primary",
@@ -78,19 +80,15 @@ pub fn Button(
             class=format!("btn {} {} {}", variant_class, size_class, extra_class)
             disabled=disabled || loading
             aria-busy=loading
-            on:click=move |ev| {
-                if !disabled && !loading {
-                    if let Some(handler) = on_click.as_ref() {
-                        handler.call(ev);
-                    }
-                }
-            }
+            on:click=on_click
         >
-            {move || if loading {
-                view! { <span class="btn-spinner"></span> }.into_view()
-            } else {
-                children().into_view()
-            }}
+            {view!{
+                if loading {
+                    view! {<span class="btn-spinner"></span> }
+                } else {
+                    children().into_view()
+                }}
+            }
         </button>
     }
 }

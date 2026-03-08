@@ -1,5 +1,6 @@
 use leptos::*;
-use leptos_router::*;
+use leptos::prelude::{ElementChild, ClassAttribute};
+use leptos_router::components::A;
 
 /// Navbar component with links
 ///
